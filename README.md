@@ -105,4 +105,5 @@ To extend functionality, import JSON workflow files:
 
 ---
 
-Happy creating with ComfyUI! ✨
+❤️ Like the tool? Give it a ⭐ on GitHub or share the notebook.
+Happy creating!
