@@ -1,12 +1,28 @@
-# 🚀 The ComfyUI Colab: Ultimate Edition
+# 🚀 ComfyUI on Google Colab: Advanced & Flexible Deployment
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1DkhCfMOAJ51B1rXFtm52lrzBqqPNtbVk?usp=sharing)
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/ecafb60d-630f-42ce-8079-fef958ae4fe8" />
+
+<p>
+  <a href="https://visitorbadge.io/status?path=colab-1DkhCfMOAJ51B1rXFtm52lrzBqqPNtbVk">
+    <img
+      src="https://api.visitorbadge.io/api/visitors?path=colab-1DkhCfMOAJ51B1rXFtm52lrzBqqPNtbVk&label=Visitors&labelColor=%232e3440&countColor=%2337d67a&style=flat&labelStyle=none"
+      width="157"
+      alt="Visitors"
+    />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://colab.research.google.com/drive/1DkhCfMOAJ51B1rXFtm52lrzBqqPNtbVk?usp=sharing">
+    <img
+      src="https://colab.research.google.com/assets/colab-badge.svg"
+      alt="Open In Colab"
+      width="230"
+    />
+  </a>
+</p>
 
 ## ✨ Overview
 
-Welcome to the **The ComfyUI Colab Notebook**, a comprehensive and highly-engineered environment for deploying and running [ComfyUI](https://comfyui.com/). This notebook has been rebuilt from the ground up to provide an unparalleled user experience, combining power, flexibility, and ease of use.
-
-Designed for both beginners and advanced users, this setup transforms the standard ComfyUI experience with a suite of powerful, integrated tools. From a real-time command center that monitors your system's vitals to intelligent, multi-platform model downloaders, every aspect has been optimized for a seamless and productive workflow.
+This Google Colab notebook provides a comprehensive and highly configurable environment for deploying and running [ComfyUI](https://comfyui.com/), a powerful node-based interface for Stable Diffusion. Designed for efficiency and scalability, this setup offers robust features for managing models, custom nodes, and remote access, making it suitable for both rapid prototyping and sustained AI art generation.
 
 ### Key Features:
 
@@ -18,63 +34,75 @@ Designed for both beginners and advanced users, this setup transforms the standa
 *   **🌐 Secure Remote Access:** Integrated Ngrok support generates a secure, public URL, allowing you to access and control your ComfyUI instance from any browser, anywhere.
 *   **⚙️ Effortless Configuration:** A clean, centralized configuration panel for all your API keys (Civitai, Hugging Face) and settings, including Colab Secrets support for enhanced security.
 
-## 💾 Storage Configuration
-
-The notebook features a `SAVE_TO_GDRIVE` toggle to dictate your storage strategy:
-
-*   **✅ `SAVE_TO_GDRIVE` (True):**
-    *   **All components** (models, custom nodes, input/output data) are stored persistently in your specified Google Drive directory (`GDRIVE_BASE`).
-    *   **Advantage:** Ensures full data persistence and eliminates the need for repeated model downloads across Colab sessions, ideal for stable and long-term projects.
-
-*   **❌ `SAVE_TO_GDRIVE` (False):**
-    *   **Only critical data** (`input`, `output`, `temp`, `user`, `custom_nodes`) is saved to Google Drive.
-    *   **Large model files** (e.g., `checkpoints`, `loras`, `vae`) are directed to Colab's ephemeral runtime storage (`/content/ComfyUI/models/`).
-    *   **Advantage:** Significantly reduces Google Drive consumption.
-    *   **Consideration:** Requires re-downloading large models at the start of each new Colab session, as temporary storage is reset. This mode is beneficial for users with limited Drive space or those frequently experimenting with diverse models.
-
-## ⚙️ Usage Instructions
-
-### 1. System Requirements
-
-Prioritize a GPU-accelerated runtime for optimal performance:
-1.  Navigate to `Runtime` > `Change runtime type` within the Colab interface.
-2.  Select "Hardware accelerator" as either **T4 GPU** or **A100 GPU**.
-
-### 2. Initial Configuration
-
-Adjust the parameters in the "⚙️ Enhanced ComfyUI User Configuration" cell to align with your setup:
-
-*   **`SAVE_TO_GDRIVE`**: Set to `True` for full Google Drive persistence, or `False` for optimized Drive space usage.
-*   **`GDRIVE_BASE`**: Define the base path within your Google Drive for ComfyUI data storage (e.g., `/content/drive/MyDrive/ComfyUI`).
-*   **`HF_TOKEN` (Hugging Face)**: Provide your Hugging Face API token (with read access) for accessing gated models. Obtain it from [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens).
-*   **`CIVITAI_API_KEY` (Civitai)**: Enter your Civitai API key for seamless community model downloads. Retrieve it from [civitai.com/user/account](https://civitai.com/user/account).
-*   **`NGROK_AUTHTOKEN` (Ngrok)**: Supply your Ngrok authtoken to enable public URL generation for remote access. Find your token at [dashboard.ngrok.com/get-started/your-authtoken](https://dashboard.ngrok.com/get-started/your-authtoken).
-
-### 3. Environment Setup
-
-Execute the **"📦 Install Dependencies & Setup ComfyUI"** and **"☁️ Integrate with Google Drive & Configure Paths"** cells. These will prepare the environment, install all necessary packages, and configure storage paths.
-
-### 4. Model and Node Management
-
-Utilize the dedicated, powerful downloader cells to build your asset library:
-
-*   **"📥 Universal Asset Downloader"**: The primary tool for most models. Paste any link from Civitai (including image pages), Hugging Face, or MEGA. The script handles the rest.
-*   **Specialized Downloaders**: Use the dedicated cells for **WAN Models**, **Hugging Face Essentials**, and **Civitai Curated Lists** to easily acquire specific, popular assets.
-*   **"��IIsstlllCCustm NNddes**: SSleecttth  cutom nndes yyu wiihhtt innsalll.TTeyywwillbb ppersstentllysttred ii your GGooll DDivv..
-
-#### 5. Launch ComfyUI
-
-Finally, run the **"▶️ Launch ComfyUI"** cell. This will start the server and activate the **Live Command Center UI**, providing you with system metrics, a live event log, and the access URLs for your ComfyUI instance.
-
-## 📥 Integrating Custom Workflows
-
-1.  **Acquire Workflow JSON:** Download a workflow file (e.g., from the links provided in the notebook).
-2.  **Load in ComfyUI:**
-    *   Access the ComfyUI web interface via the Ngrok or local URL.
-    *   Click the "Load" button and select your downloaded `.json` file.
-
-The workflow will instantly populate your graph, ready for you to create.
+<img width="1146" height="543" alt="image" src="https://github.com/user-attachments/assets/2987b571-c138-4307-971e-ae09f414039e" />
 
 ---
 
-Happy generating! ✨
+## 💾 Storage Configuration
+
+The notebook’s `SAVE_TO_GDRIVE` setting controls your storage strategy:
+
+*   **`SAVE_TO_GDRIVE = True`**
+    All data — including models, nodes, inputs, and outputs — are saved persistently in your Google Drive folder (`GDRIVE_BASE`). This ensures no need to re-download models after reconnecting.
+
+*   **`SAVE_TO_GDRIVE = False`**
+    Only essential user data and configurations are saved to Google Drive. Large models are stored temporarily on Colab’s runtime storage. This saves Drive space but requires model re-download each session.
+    
+    <img width="1816" height="244" alt="image" src="https://github.com/user-attachments/assets/61013201-17d3-4b38-9e69-0b3e707cc8ea" />
+
+---
+
+## ⚙️ Usage Instructions
+
+### 1. Runtime Setup
+
+* Go to `Runtime` > `Change runtime type` in Colab.
+* Select GPU accelerator (T4 or A100 recommended).
+
+### 2. Configure Settings
+
+In the "Enhanced ComfyUI User Configuration" cell, set:
+
+* `SAVE_TO_GDRIVE` (True/False)
+* `GDRIVE_BASE` (path in your Google Drive)
+* API tokens for Hugging Face (`HF_TOKEN`), Civitai (`CIVITAI_API_KEY`), and Ngrok (`NGROK_AUTHTOKEN`)
+* Optional: `FORCE_MODEL_REFRESH` to re-download models
+
+### 3. Environment Setup
+
+Run sequentially:
+
+* **Install Dependencies & Setup ComfyUI:** Installs system/Python packages and clones ComfyUI repo.
+* **Google Drive Integration & Path Config:** Mounts Drive, creates directories, and configures model paths.
+
+### 4. Manage Models & Nodes
+
+* Use the **Universal Asset Downloader** to fetch assets via URLs (Civitai, Hugging Face, MEGA).
+* Download WAN models, Hugging Face models, or Civitai checkpoints/LoRAs from curated lists.
+* Install custom nodes, including ComfyUI-Manager and popular extensions, with persistence.
+
+### 5. (Optional) Remote Access Setup
+
+Run the Ngrok setup cell if remote access is required (ensure `NGROK_AUTHTOKEN` is set).
+
+### 6. Launch ComfyUI
+
+Run the launch cell to:
+
+* Start ComfyUI server
+* Enable live resource monitoring
+* Access via local URL and public Ngrok URL (if configured)
+
+---
+
+## 📥 Importing Custom Workflows
+
+To extend functionality, import JSON workflow files:
+
+1. Download or save a workflow `.json` file.
+2. Open your ComfyUI web interface.
+3. Use the "Load" button to import the workflow into your node graph.
+
+---
+
+Happy creating with ComfyUI! ✨
