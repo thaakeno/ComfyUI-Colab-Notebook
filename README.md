@@ -1,5 +1,6 @@
 # 🚀 ComfyUI on Google Colab: Advanced & Flexible Deployment
 
+## Last Updated: August 11, 2025
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/ecafb60d-630f-42ce-8079-fef958ae4fe8" />
 
 <p>
